@@ -1,52 +1,29 @@
 .CardList {
-    display: flex;    
-    flex-wrap: wrap;
-    padding:  105px 152px 0 152px ;
+    align-items: center;
+    padding: 0;
     list-style-type: none;
 }
 
 .card{
     position: relative;
-    min-width: 330px;
-    height: 256px;
-    margin-bottom: 40px;
-    margin-right: 40px;
-    padding: 32px;       
+    width: 280px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 28px;       
     text-align: left; 
     background: #FFFFFF;
     border-radius: 24px;
 }
 
-/* 
-
-.box {
-    display: flex;
-    width: 100%;
-    margin-top: 40px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.price{
-    display: flex;
-    font-size: 60px;
-    line-height: 1.2;
-}
-
-.price span{
-    font-size: 30px;
-    padding-top: 15px;
-    padding-right: 3px;
-} */
-
 .CardButton{
     position: absolute;
-    bottom: 52px;
-    right: 32px;
-    width: 64px;
-    height: 56px;
+    bottom: 35px;
+    right: 20px;
+    width: 60px;
+    height: 50px;
     font-weight: 500;  
-    text-transform:uppercase;
+    text-transform: uppercase;
     background: #FFFFFF;
     color: #4BCFA0;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -72,6 +49,34 @@
 }
 
 .loader{
-    margin: 150px 0;    
+    margin: 120px 0;    
     font-size: 40px;   
+}
+
+@media screen and (min-width: 768px) {
+    .CardList {
+        display: flex;    
+        flex-wrap: wrap;
+        padding:  105px 152px 0 152px ;
+    }
+
+    .card{
+        min-width: 330px;
+        height: 256px;        
+        margin: 0;
+        margin-bottom: 40px;
+        margin-right: 40px;
+        padding: 32px;
+    }
+
+    .CardButton{
+        bottom: 52px;
+        right: 32px;
+        width: 64px;
+        height: 56px;
+    }
+
+    .loader{
+        margin: 150px 0;  
+    }
 }

@@ -12,9 +12,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 384px;
-  height: 536px;
-  padding-top: 54px;
+  width: 290px;
+  height: 460px;
+  padding-top: 40px;
   background-color: #fff;
   border-radius: 24px;
   text-align: center;
@@ -29,4 +29,13 @@
   background: #F2F2F2;
   border-radius: 50%;
   border: none;
+}
+
+
+@media screen and (min-width: 768px) {
+  .modalContent {
+    width: 384px;
+    height: 536px;
+    padding-top: 54px;
+  }
 }

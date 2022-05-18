@@ -6,10 +6,10 @@ const Form = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('')
 
-  const [validName, setValidName] = useState('true')
-  const [errorName, setErrorName] = useState('')
+  const [validName, setValidName] = useState(true)
+  const [errorName, setErrorName] = useState('This field in required')
 
-  const [validNumber, setValidNumber] = useState('true')
+  const [validNumber, setValidNumber] = useState(true)
   const [errorNumber, setErrorNumber] = useState('This field in required')
 
   const handleSubmit = (e) => {
@@ -20,6 +20,7 @@ const Form = () => {
   
   const handleImputName = (e) => {
     setName(e.target.value)
+
     setValidName(e.target.validity.valid)
 
     if(e.target.value < '1') {
@@ -86,7 +87,7 @@ const Form = () => {
                             <Error className={styles.ErrorIcon}/>
                         </div> : <></>}
 
-        <button type="submit" className={styles.button} onChange={handleSubmit} >Order</button>
+        <button type="submit" className={styles.button} onChange={handleSubmit}>Order</button>
       </form>
     );
   }
