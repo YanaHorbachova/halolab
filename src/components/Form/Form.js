@@ -20,7 +20,6 @@ const Form = () => {
   
   const handleImputName = (e) => {
     setName(e.target.value)
-
     setValidName(e.target.validity.valid)
 
     if(e.target.value < '1') {
