@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/halolab/static/css/main.3f715cb3.css",
+    "main.js": "/halolab/static/js/main.9a99b5a3.js",
+    "index.html": "/halolab/index.html",
+    "static/media/error.svg": "/halolab/static/media/error.17a9a679b92b5d58500e17e87181b347.svg",
+    "static/media/close.svg": "/halolab/static/media/close.61bc0d9f80ef2ccf6d7ce1e8bb5ba9a7.svg",
+    "main.3f715cb3.css.map": "/halolab/static/css/main.3f715cb3.css.map",
+    "main.9a99b5a3.js.map": "/halolab/static/js/main.9a99b5a3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3f715cb3.css",
+    "static/js/main.9a99b5a3.js"
+  ]
+}
