@@ -57,7 +57,8 @@
     .CardList {
         display: flex;    
         flex-wrap: wrap;
-        padding:  105px 152px 0 152px ;
+        margin: 0 auto;
+        padding:  90px 150px 0 165px ;
     }
 
     .card{

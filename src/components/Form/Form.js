@@ -17,6 +17,19 @@ const Form = () => {
     console.log( `name : ${name}, number: ${number}`)
     reset();
   };  
+
+  const ValidForm = () => {
+    if((number.length < '1') && (name.length < '1')){
+      setValidNumber(false); 
+      setValidName(false);
+    } 
+    if(name.length < '1'){
+      return setValidName(false)
+    }
+    if(number.length < '1'){
+      return setValidNumber(false)
+    } 
+  }
   
   const handleImputName = (e) => {
     setName(e.target.value)
@@ -46,13 +59,25 @@ const Form = () => {
     }
   }
 
+  const ClearInvalidName = (e) => {
+    if(!e.target.validity.valid){
+      return setName('') 
+    }
+  }
+
+  const ClearInvalidNumber = (e) => {
+    if(!e.target.validity.valid){
+      return setNumber('')
+    }
+  }
+
   const reset = () => {
     setNumber('')
     setName('')
   };
 
     return (
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit} >
 
           <input
             className={styles.name}
@@ -62,6 +87,7 @@ const Form = () => {
             value={name}
             placeholder="Name"
             onChange={handleImputName}
+            onFocus={ClearInvalidName}
             pattern="[A-Za-zА-Яа-яЁё]*$"
             required
           />
@@ -73,10 +99,11 @@ const Form = () => {
           <input
             className={styles.number}
             type="tel"
-            onChange={handleImputNumber}
             value={number}
             name="number"
-            placeholder="Number"
+            placeholder="Number"            
+            onChange={handleImputNumber}            
+            onFocus={ClearInvalidNumber}
             pattern="^[0-9]{12}"
             maxLength="12"
             required
@@ -86,7 +113,7 @@ const Form = () => {
                             <Error className={styles.ErrorIcon}/>
                         </div> : <></>}
 
-        <button type="submit" className={styles.button} onChange={handleSubmit}>Order</button>
+        <button type="submit" className={styles.button} onFocus={ValidForm}>Order</button>
       </form>
     );
   }
