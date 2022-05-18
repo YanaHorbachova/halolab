@@ -11,11 +11,11 @@ input{
     border-radius: 16px;
 }
 
-.name{    
+.name{   
     margin-top: 32px;
 }
 
-.number{    
+.number{     
     margin-top: 16px;
 }
 
@@ -30,6 +30,18 @@ input{
     border: 1px solid #E43F3F;
 }
 
+.error{
+    position: relative;
+    margin-left: 60px;
+    text-align: start;
+    font-size: 12px;
+    color: #E43F3F;
+}
+.ErrorIcon{
+    position: absolute;
+    right: 60px;
+    bottom: 30px;
+}
 .button {
     width: 288px;
     height: 56px;

@@ -1,31 +1,58 @@
-import React, { Component } from "react";
+import { useState } from "react";
+import {ReactComponent as Error} from '../../icon/error.svg'
 import styles from "./Form.module.css";
 
-class Form extends Component {
-  state = {
-    name: '',
-    number: '',
-  };
+const Form = () => {
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('')
 
-  handleChange = (e) => {
-    const { name, value } = e.currentTarget;
-    this.setState({ [name]: value });
-  };
+  const [validName, setValidName] = useState('true')
+  const [errorName, setErrorName] = useState('')
 
-  handleSubmit = (e) => {
+  const [validNumber, setValidNumber] = useState('true')
+  const [errorNumber, setErrorNumber] = useState('This field in required')
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log( `name : ${this.state.name}, number: ${this.state.number}`)
-    this.reset();
+    console.log( `name : ${name}, number: ${number}`)
+    reset();
+  };  
+  
+  const handleImputName = (e) => {
+    setName(e.target.value)
+    setValidName(e.target.validity.valid)
+
+    if(e.target.value < '1') {
+      return setErrorName('This field in required');         
+    }
+    if(!e.target.validity.valid) {
+      return setErrorName('Only letters allowed');   
+    }
+  }
+
+  const handleImputNumber = (e) => {
+    setNumber(e.target.value)
+    setValidNumber(e.target.validity.valid)
+
+    if(e.target.value.length < '1') {
+      return setErrorNumber('This field in required');         
+    }
+    if(e.target.value.length < '12') {
+      
+      return setErrorNumber('Should contain 12 characters');         
+    }
+    if((e.target.value.length > '11') && (!e.target.validity.valid)) {
+      return setErrorNumber('Only numbers allowed');   
+    }
+  }
+
+  const reset = () => {
+    setNumber('')
+    setName('')
   };
 
-  reset = () => {
-    this.setState({ name: '', number: '' });
-  };
-
-  render() {
-    const { name, number } = this.state;
     return (
-      <form className={styles.form} onSubmit={this.handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
 
           <input
             className={styles.name}
@@ -34,29 +61,35 @@ class Form extends Component {
             name="name"
             value={name}
             placeholder="Name"
-            onChange={this.handleChange}
+            onChange={handleImputName}
             pattern="[A-Za-zА-Яа-яЁё]*$"
-            title="Only letters allowed"
             required
           />
+          {!validName ? <div className={styles.error}> 
+                            <p >{errorName}</p>
+                            <Error className={styles.ErrorIcon}/>
+                        </div> : <></>}
          
           <input
             className={styles.number}
             type="tel"
-            onChange={this.handleChange}
+            onChange={handleImputNumber}
             value={number}
             name="number"
             placeholder="Number"
             pattern="^[0-9]{12}"
             maxLength="12"
-            title="Only numbers allowed"
             required
           />
+          {!validNumber ? <div className={styles.error}> 
+                            <p>{errorNumber}</p>
+                            <Error className={styles.ErrorIcon}/>
+                        </div> : <></>}
 
-        <button type="submit" className={styles.button}>Order</button>
+        <button type="submit" className={styles.button} onChange={handleSubmit} >Order</button>
       </form>
     );
   }
-}
+
 
 export default Form;
