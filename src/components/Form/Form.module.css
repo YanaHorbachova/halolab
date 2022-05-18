@@ -1,0 +1,50 @@
+.form {
+    text-align: center;
+}
+
+input{ 
+    width: 288px;
+    height: 56px;
+    padding: 16px;
+    color: rgba(0, 0, 0, 0.5);;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+}
+
+.name{    
+    margin-top: 32px;
+}
+
+.number{    
+    margin-top: 16px;
+}
+
+.name:not(:placeholder-shown):required:valid,
+.number:not(:placeholder-shown):required:valid {
+    border: 1px solid #4BCFA0;
+}
+
+.name:not(:placeholder-shown):required:invalid,
+.number:not(:placeholder-shown):required:invalid,
+.name:not(:placeholder-shown):invalid {
+    border: 1px solid #E43F3F;
+}
+
+.button {
+    width: 288px;
+    height: 56px;
+    margin-top: 32px;
+    font-weight: 500;
+    text-transform: uppercase;   
+    background: #4BCFA0;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 16px;
+}
+
+.button:hover::after {
+    content: '\1F862';
+    width: 20px;
+    height: 20px;
+    padding-left: 8px;
+}

@@ -1,0 +1,77 @@
+.CardList {
+    display: flex;    
+    flex-wrap: wrap;
+    padding:  105px 152px 0 152px ;
+    list-style-type: none;
+}
+
+.card{
+    position: relative;
+    min-width: 330px;
+    height: 256px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    padding: 32px;       
+    text-align: left; 
+    background: #FFFFFF;
+    border-radius: 24px;
+}
+
+/* 
+
+.box {
+    display: flex;
+    width: 100%;
+    margin-top: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price{
+    display: flex;
+    font-size: 60px;
+    line-height: 1.2;
+}
+
+.price span{
+    font-size: 30px;
+    padding-top: 15px;
+    padding-right: 3px;
+} */
+
+.CardButton{
+    position: absolute;
+    bottom: 52px;
+    right: 32px;
+    width: 64px;
+    height: 56px;
+    font-weight: 500;  
+    text-transform:uppercase;
+    background: #FFFFFF;
+    color: #4BCFA0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
+
+.CardButton:hover,
+.CardButton:focus {
+    background: #4BCFA0;
+    color: #FFFFFF;
+    border: none;
+}
+
+.button {
+    width: 235px;
+    height: 60px;
+    margin: 29px 0;
+    font-size: 24px;   
+    background: #4BCFA0;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 16px;
+}
+
+.loader{
+    margin: 150px 0;    
+    font-size: 40px;   
+}
