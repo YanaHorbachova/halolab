@@ -34,7 +34,7 @@ function App() {
         <Cards cards={cards} onOpenModal={onOpenModal}/>
         {showModal && (<Modal toggle={toggle}>
             <CardItem cards={cards} ind={index}/>
-            <Form/>
+            <Form toggle={toggle}/>
         </Modal>)}  
       </div>
     );

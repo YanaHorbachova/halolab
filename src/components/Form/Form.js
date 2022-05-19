@@ -2,7 +2,7 @@ import { useState } from "react";
 import {ReactComponent as Error} from '../../icon/error.svg'
 import styles from "./Form.module.css";
 
-const Form = () => {
+const Form = ({toggle}) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('')
 
@@ -14,8 +14,12 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log( `name : ${name}, number: ${number}`)
-    reset();
+    if(validName && validNumber){
+      console.log( `name : ${name}, number: ${number}`)
+      reset();
+      toggle()
+    }
+
   };  
 
   const ValidForm = () => {
@@ -77,7 +81,7 @@ const Form = () => {
   };
 
     return (
-      <form className={styles.form} onSubmit={handleSubmit} >
+      <form className={styles.form} onSubmit={handleSubmit} noValidate>
 
           <input
             className={styles.name}
